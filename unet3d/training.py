@@ -85,4 +85,6 @@ def train_model(model, model_file, training_generator, validation_generator, ste
                                                 learning_rate_drop=learning_rate_drop,
                                                 learning_rate_epochs=learning_rate_epochs,
                                                 learning_rate_patience=learning_rate_patience,
-                                                early_stopping_patience=early_stopping_patience))
+                                                early_stopping_patience=early_stopping_patience),
+                        workers=0  # FIX for segfault
+                       )
